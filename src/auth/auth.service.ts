@@ -1,8 +1,4 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class AuthService {
-  signUp() {
-    return { message: 'User Created Successfully' };
-  }
-}
+export class AuthService {}
