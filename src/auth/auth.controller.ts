@@ -9,6 +9,8 @@ export class AuthController {
 
   @Post('signup')
   signUp(@Body() signupDto: SignupDto) {
-    return this.authService.signUp(signupDto);
+    const user = this.authService.signUp(signupDto);
+
+    return user;
   }
 }

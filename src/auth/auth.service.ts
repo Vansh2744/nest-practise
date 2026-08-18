@@ -9,6 +9,10 @@ export class AuthService {
 
   async signUp(signupDto: SignupDto) {
     const hashPassword = await bcrypt.hash(signupDto.password, 10);
-    return this.userService.signUp({ ...signupDto, password: hashPassword });
+    const user = await this.userService.signUp({
+      ...signupDto,
+      password: hashPassword,
+    });
+    return user;
   }
 }
